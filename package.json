@@ -1,0 +1,68 @@
+{
+	"name": "terminalapi",
+	"displayName": "TerminalApi",
+	"description": "",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.30.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.terminalApi.newTerminalCreatedWithHelpArgs",
+		"onCommand:extension.terminalApi.newTerminalCreatedWithHelpOptions",
+		"onCommand:extension.terminalApi.newTerminalSendTextToTheTerminal",
+		"onCommand:extension.terminalApi.newTerminalHideTerminalPanel",
+		"onCommand:extension.terminalApi.newTerminalShowTerminalWithDelay",
+		"onCommand:extension.terminalApi.newTerminalDispose",
+		"onCommand:extension.terminalApi.newTerminalSubscribeOnDidCloseTerminalEvent"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.terminalApi.newTerminalCreatedWithHelpArgs",
+				"title": "Create terminal with help arguments"
+			},
+			{
+				"command": "onCommand:extension.terminalApi.newTerminalCreatedWithHelpOptions",
+				"title": "Create terminal with help options"
+			},
+			{
+				"command": "onCommand:extension.terminalApi.newTerminalSendTextToTheTerminal",
+				"title": "Send text to the terminal"
+			},
+			{
+				"command": "onCommand:extension.terminalApi.newTerminalHideTerminalPanel",
+				"title": "Hide terminal panel after 3 sec"
+			},
+			{
+				"command": "onCommand:extension.terminalApi.newTerminalShowTerminalWithDelay",
+				"title": "Show terminal after 3 sec"
+			},
+			{
+				"command": "onCommand:extension.terminalApi.newTerminalDispose",
+				"title": "Dispose terminal after 3 sec"
+			},
+			{
+				"command": "onCommand:extension.terminalApi.newTerminalSubscribeOnDidCloseTerminalEvent",
+				"title": "Subscribe to onDidCloseTerminal event"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.25",
+		"tslint": "^5.8.0",
+		"@types/node": "^8.10.25",
+		"@types/mocha": "^2.2.42"
+	}
+}
